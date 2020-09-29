@@ -1,0 +1,77 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+div, a, img, span, section, ul, li, p {
+    // transition: .5s;
+}
+
+body {
+    // font-family: 'PT Sans', sans-serif;
+     font-family: 'Pangolin', sans-serif;
+    // font-size: 18px;
+    // line-height: 24px;
+    position: relative;
+
+    --def: #fff;     
+    --inv: #FF38B0;
+}
+
+section {
+    padding: 20px 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    min-height: ~"calc(100vh - 290px)";
+    margin-bottom: 40px;
+}
+
+.all-title {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.main-layout {
+    position: relative;
+    overflow: hidden;
+}
+
+.layout {
+   transition: transform 0.5s ease;
+   position: relative;
+   z-index: 1;
+   background-color: @light-pink;
+}
+
+.container {
+    .container-fluid();
+}
+
+.clearfix {
+    .clearfix();
+}
+
+.ReactModal__Overlay {
+    z-index: 2;
+}
+
+@media @desktop-widths {
+    section {
+        padding: 20px 0;
+    }
+}

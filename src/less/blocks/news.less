@@ -1,0 +1,54 @@
+.news__image {
+
+	max-width: 435px;
+
+	& img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		max-width: 100%;
+	}
+}
+.news__list {
+	font-size: 22px;
+}
+.news__info {
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #868686;
+}
+.news__title {
+	font-family: "BigSoftie";
+    font-size: 32px;
+    color: #FF38B0;
+    margin-bottom: 20px;
+}
+.news_subtitle {
+	font-weight: bold;
+    color: #FF38B0;
+}
+.news__item {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed #868686;
+}
+.news__ul {
+	list-style-type: circle;
+	padding-left: 20px;
+}
+
+.news__text {
+	color: @blue;
+}
+
+@media @tablet-widths {
+	.news__image {
+		float: left;
+		margin-right: 20px;
+
+		& img {
+			margin-bottom: 0;
+			margin: 0;
+		}
+	}
+}

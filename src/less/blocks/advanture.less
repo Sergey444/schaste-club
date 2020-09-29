@@ -1,0 +1,151 @@
+.advanture {
+    padding: 0px;
+    background-color: @light-pink;
+}
+
+.advanture__wrap {
+    padding: 20px;
+}
+
+.advanture__subtitle {
+    color: #ff4900;
+    font-size: 33px;
+    text-shadow: 1px 1px 10px lightgrey;
+}
+.advanture__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.advanture--second {
+    background-image: url('/images/advanture/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.advanture__text {
+    font-size: 30px;
+    color: #3a3a3a;
+    margin: 0 auto;
+}
+
+.advanture--second .advanture__text {
+    color: @pink;
+}
+
+.advanture__item {
+    perspective: 500px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: @light-green;
+    box-shadow: 12px 14px 8px 0px rgba(52, 107, 0, 0.5);
+
+    &:not(:last-child) {
+        margin-bottom: 30px
+    }
+
+    & span {
+        line-height: 34px;
+    }
+}
+
+.advanture--second .advanture__item {
+    background-color: #fff;
+}
+
+.advanture__icon {
+    max-width: 64px;
+}
+
+
+.advanture__img {
+    padding: 5px;
+    margin-right: 30px;
+    background-color: #fff;
+}
+.advanture--second .advanture__img {
+
+    background-color: #b2e086;
+}
+
+@media @tablet-widths {
+    .advanture__wrap {
+        padding-bottom: 70px ;
+    }
+
+    .advanture__item {
+        flex-wrap: nowrap;
+        font-size: 30px;
+        padding: 0;
+        padding-right: 30px;
+    }
+
+    .advanture__icon {
+        margin: 0;
+        // margin-right: 30px;
+    }
+
+    .advanture--second .advanture__item:last-child {
+        max-width: 75%;
+    }
+
+    .advanture--second .advanture__wrap {
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            width: 215px;
+            height: 215px;
+            display: inline-block;
+            position: absolute;
+            background-image: url('/images/sprite.png');
+            background-position: -500px -165px;
+        }
+
+        &::before {
+            left: -200px;
+            bottom: 0;
+        }
+
+        &::after {
+            top: 0;
+            background-position: -1013px -212px;
+            right: -217px;
+        }
+    }
+
+    .advanture__second-list {
+        &::after {
+            content: '';
+            width: 215px;
+            height: 215px;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            background-image: url('/images/sprite.png');
+            background-position: -755px -148px;
+            right: 0px;
+        }
+    }
+
+
+}
+
+@media @desktop-widths {
+
+    .advanture--second .advanture__item:last-child {
+        max-width: 79%;
+    }
+    .advanture__content {
+        flex-wrap: nowrap;
+    }
+    .advanture__list {
+        text-align: left;
+    }
+}

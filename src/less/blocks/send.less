@@ -1,0 +1,136 @@
+@keyframes send {
+    from {
+        transform: rotate3d(1, 0, 0, 0deg);
+
+    }
+    to{
+        transform: rotate3d(1, 0, 0, -180deg ); 
+        z-index: 3;
+    }
+}
+
+.send {
+    min-height: 487px;
+    margin-bottom: 160px;
+}
+.envelope {
+    position: relative;
+    margin: 0 auto;
+    transition: transform 3s;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Montserrat", sans-serif;
+    color: #3a3a3a;
+}
+.envelope.envelope--close {
+
+    & .letter_content {
+        min-height: 0;
+    }
+
+    & .letter {
+        transform: translateY(200px)!important;
+    }
+}
+.envelope_cover_in,
+.envelope_cover_in_back {
+    position: absolute;
+    backface-visibility: hidden;    
+}
+.envelope_cover_in_back {
+    transform: rotateY(180deg);
+}
+.envelope_close {
+    animation-fill-mode: forwards;
+    position: relative;
+    transform-style: preserve-3d;
+    animation-delay: 0.3s;
+    animation-duration: 2s;
+    transform-origin: 0px 189px;
+    // transition: 0.3s;
+}
+.envelope_in {
+    position: absolute;
+    top: 189px;
+}
+.envelope_out_top {
+    position: absolute;
+    top: 189px;
+    z-index: 1;
+}
+.envelope_out_bottom {
+    position: absolute;
+    top: 308px;
+    z-index: 1;
+}
+.envelope_form {
+    z-index: 1;
+    padding: 0 17px;
+}   
+.envelope__input {
+    border: 0;
+    background-color: #fffab5;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 0 10px;
+
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    font-family: auto;
+    color: @pink;
+
+    flex-grow: 1;
+}
+.letter {
+    
+    position:  absolute;
+    left: 40px;
+
+    transition: .4s linear;
+}
+.letter_content {
+    margin-top: -81px;
+    background-color: #fffab5;
+    width: 100%;
+    max-width: 390px;
+    top: 94px;
+    min-height: 300px;
+    transition: 1s;
+    // padding-bottom: 50px;
+}
+.textarea_message {
+    background-color: #fffab5;
+    width: 347px;
+    font-size: 18px;
+    border: none;
+    color: @pink;
+    background-image: url(/images/lines/line3.png);
+    background-position-y: 24px;
+    outline: none;
+}
+.form_controll {
+    margin: 8px 0;
+    display: flex;   
+}
+
+.form_control--btn {
+        text-align: right;
+    }
+.envelope_btn {
+    cursor: pointer;
+    color: @pink;
+    margin-right: 20px;
+    font-weight:  bold;
+    font-style: italic;
+}
+@media @tablet-widths {
+    .send {
+        margin-bottom: 0;
+    }
+    .envelope {
+        transform: scale(1);
+        width: 469px;
+    }
+
+}

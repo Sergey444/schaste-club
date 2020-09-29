@@ -1,0 +1,29 @@
+h1.title {
+	display: none;
+}
+
+.title__hidden {
+	display: none;
+}
+
+.title {
+	color: @pink;
+	font-size:  30px;
+	font-weight: bold;
+	margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 150%;
+	text-transform: uppercase;
+	text-align: center;
+
+	& a {
+		color: @pink;
+	}
+}
+
+@media @tablet-widths {
+	.title {
+		font-size: 48px;
+	}
+}
+

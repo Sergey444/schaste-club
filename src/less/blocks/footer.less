@@ -1,0 +1,77 @@
+.footer {
+    z-index: 1;
+    position: relative;
+
+    background-image: url('/images/footer/bg.png');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    padding: 15px;
+    min-height: 150px;
+}
+
+.footer__social  {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding-left: 40px;
+
+        & .top-banner__contacts-item {
+            width: 100%;
+        }
+}
+
+.footer__question {
+    font-family: BigSoftie;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.footer__block {
+    font-family: BigSoftie;
+    font-size: 29px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.footer__call {
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.footer__phone {
+    color: @pink;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    font-size: 28px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+
+
+@media @mobile-widths-only {
+  .footer__call {
+    display: none;
+  }
+}
+
+@media @tablet-widths {
+    .footer {
+        padding-top: 15px;
+    }
+    .footer__social {
+        & .top-banner__contacts-item {
+            width: 49%;
+        }
+    }
+
+    .footer__question {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,112 @@
+.top-menu {
+    z-index: 1;
+
+    // background-image: linear-gradient( #c8e3bb 80px, #fff2ea 0% );
+    background-image: linear-gradient( #c8e3bb 100%, #fff2ea 0% );
+
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 15px;
+    min-height: 115px;
+    position: relative;
+    &--main {
+        background-color: @light-pink;
+    }
+}
+.top-menu__wrapper {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+.top-menu__logo {
+    
+    & img {
+        width: 150px;
+    }
+}
+.top-menu__list {
+    display: none;
+    font-weight: medium;
+    font-size: 20px;
+    line-height: 100%;
+}
+.top-menu__item {
+    float: left;
+
+    & a {
+        display: block;
+        padding-top: 10px;
+        color: @blue;
+        border-top: 1px solid #fff2ea;
+
+        &:hover,
+        &.active {
+            border-top: 2px solid @blue;
+        }
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+.top-menu__contacts {
+    min-width: 100%;
+    text-align: right;
+
+    & a {
+        color: @pink;
+        text-shadow: 1px 1px 1px #000;
+    }
+}
+.top-menu__phone {
+    font-size: 28px;
+    font-weight: bold;
+}
+.top-menu__address {
+    font-size: 13px;
+    display: block;
+}
+
+.top-menu__contacts-list {
+    font-size: 22px;
+    color: @pink;
+    font-weight: bold;
+
+    & a {
+        color: @pink;
+        // text-decoration: underline;
+    }
+}
+
+@media @tablet-widths {
+    .top-menu__contacts {
+        min-width: 230px;
+    }
+    .top-menu__wrapper {
+        justify-content: space-between;
+    }
+}
+
+@media @desktop-widths {
+    .top-menu {
+        background-image: url('/images/top/top-menu-green-line.png');
+    }
+
+    .top-menu__list {
+        display: block;
+    }
+
+    .top-menu__item {
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    .top-menu__contacts-list {
+        display: none;
+    }
+}
+

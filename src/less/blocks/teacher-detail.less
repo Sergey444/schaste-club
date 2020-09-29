@@ -1,0 +1,107 @@
+.teacher-detail {
+	background-color: @light-pink;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 100%;
+    padding: 0;
+}
+.teacher-detail__photo {
+	background-image: url('/images/teachers/anna.jpg');
+	background-size: cover;	
+	background-position: center;
+	// min-height: 800px;
+	height: 100%;
+
+	&--anna {
+		background-image: url('/images/teachers/anna.jpg');
+	}
+
+	&--nasty {
+		background-image: url('/images/teachers/nasty.jpg');
+	}
+
+	&--lera {
+		background-image: url('/images/teachers/lera.jpg');
+	}
+
+	&--jane {
+		background-image: url('/images/teachers/jane.jpg');
+	}
+
+	&--sveta {
+		background-image: url('/images/teachers/sveta.jpg');
+	}
+}
+
+.teacher-detail__left-block, 
+.teacher-detail__right-block {
+	width: 50%;
+	font-size: 30px;
+	line-height: 40px;
+	color: @blue;
+	& a {
+		color: @blue;
+	}
+}
+.teacher-detail__wrapper {
+	display: flex;
+	height: 100%;
+}
+.teacher-detail__link {
+	position: absolute;
+	display: inline-block;
+	padding: 30px;
+    background-color: @light-green;
+        border-radius: 0 0 20px 0;
+    // border-bottom: 1px solid #fff;
+	// padding: 10px 5px;
+
+	& a {
+		padding-top: 10px;
+		font-size: 20px;
+		border-top: 1px solid #fff2ea;
+
+		&:hover {
+			border-top: 2px solid @blue;
+		}
+	}
+}
+
+.teacher-detail__text {
+	max-width: 75%;
+	padding-right: 40px;
+	width: 100%;
+	float: right;
+	// margin-top: 70px;
+	margin-top: 31vh;
+}
+
+.teacher-detail__title {
+	font-size: 53px;
+	margin-bottom: 40px;
+	line-height: 60px;
+	text-align: right;
+	font-family: "BigSoftie", sans-serif;
+	color: @pink;
+}
+
+@media @tablet-widths {
+	.teacher-detail__left-block {
+		overflow-y: scroll;
+		
+		&::-webkit-scrollbar
+		{
+			width: 12px;
+		}
+
+		&::-webkit-scrollbar-thumb
+		{
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+			background-color: @orange;
+			border-radius: 15px; ;
+			display: none;
+		}
+	}
+}

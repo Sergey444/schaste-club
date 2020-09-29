@@ -1,0 +1,29 @@
+.welcome {
+	text-align: center;
+}
+
+.welcome__clip {
+	font-weight: 700;
+	font-size: 1.5rem;
+	color: @pink;
+}
+
+.welcome__text {
+	font-style: italic;
+	font-size: 1.5rem;
+	color: @orange;
+	line-height: 50px;
+	font-weight: bold;
+
+}
+
+
+@media @tablet-widths {
+	.welcome {
+		text-align: left;
+	}
+	.welcome__text,
+	.welcome__clip {
+		font-size: 3rem;
+	}
+}

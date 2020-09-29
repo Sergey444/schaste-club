@@ -1,0 +1,172 @@
+.postcard {
+    font-size: 22px;
+    padding: 20px;
+    background: #fff;
+    border: 10px solid transparent;
+
+    border-image: 10 repeating-linear-gradient(135deg, @pink, @pink 10px, transparent 10px, transparent 20px, @orange 20px, @orange 30px,transparent 30px, transparent 40px);
+    color: #605756;
+
+    & .btn {
+        font-size: 17px;
+    }
+}
+.postcard__title {
+    color: @pink;
+    margin-top: 0;
+}
+.postcard__checkbox {
+    opacity: 1;
+    padding-left: 50px;
+    display: block;
+
+    & a {
+        color: @pink;
+        border-bottom: 1px dashed @pink;
+    }
+}
+
+.postcard__checkbox {
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+
+    &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 0;
+        border: 1px solid lightgrey;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        background-color: @pink;
+        top: 6px;
+        left: 6px;
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+.form-row {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-row:not(:first-child) {
+   margin-top: 20px;
+}
+
+.form-row input[type="text"], 
+.form-row input[type="email"], 
+.form-row textarea {
+	font-size: 20px;
+	color: @pink;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+	width: 95%;
+	padding: 0 10px;
+	line-height: 35px;
+	border-width: 0;
+	outline: none;
+	background: transparent url(/images/postcard/bg-form.png) bottom left repeat-x;
+	background-size: 8px 35px;
+}
+.form-row textarea {
+  background-attachment: local;
+  background-repeat: repeat;
+  resize: none;
+}
+.form-row label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    cursor: text;
+    opacity: .5;
+    transition: all .3s;
+}
+.form-agree {
+    font-size: 15px;
+    color: #605756;
+    position: relative;
+
+    & input {
+        opacity: 0;
+        position: absolute;
+        left: 6px;
+        top: 6px;
+    }
+
+    & input:checked + .postcard__checkbox::after {
+        opacity: 1;
+    }
+}
+
+.postcard__select {
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    outline: none;
+    font-size: 18px;
+    opacity: 0.5;
+
+    & option {
+        color: rgba(0,0,0,0.5)
+    }
+
+}
+
+.form-row input,
+.form-row textarea {
+
+    &:empty {
+        & + label {
+            top: 0px;
+        }
+    }
+
+    &:focus + label {
+        top: -20px;
+        font-size: 18px;
+    }
+
+    &:not(:empty) {
+        & + label {
+            top: -20px;
+            font-size: 18px;
+        }
+    }
+}
+
+.form-row input {
+    &:valid + label {
+        top: -20px;
+        font-size: 18px;
+    }
+}
+
+@media @tablet-widths {
+    .form-agree {
+        font-size: 20px;
+    }
+    .postcard {
+        
+        & .btn {
+            font-size: 20px;
+        }
+    }
+}

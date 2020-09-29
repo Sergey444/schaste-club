@@ -1,0 +1,120 @@
+.directions {
+    background-image: url('/images/directions/bg.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: #c8e3bb;
+    padding: 0;
+    position: relative;
+}
+
+.directions__wrap {
+    padding: 20px ;
+}
+
+.directions__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.directions__description {
+    display: none;
+}
+.directions__more {
+    text-align: right;
+}
+.directions__more-btn {
+    color: @pink;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.directions__item {
+    background-color: #fff;
+    padding: 35px 15px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // box-shadow: 0px 0px 7px 0px #346b00;
+    box-shadow: 13px 19px 13px 0px rgba(52, 107, 0, 0.3);
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-15px);
+        // box-shadow: 12px 20px 20px 0px rgba(52, 107, 0, 0.3);
+    }
+}
+.directions__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #FF38B0;
+    font-weight: normal;
+    text-align: center;
+}
+.direction__price {
+    margin-bottom: 20px;
+    // color: #909090;
+    font-family: 'Ubuntu';
+    color: #004000;
+    font-weight: 300;
+
+    & span {
+        font-weight: 500;
+    }
+}
+
+@media @tablet-widths {
+    .directions__item {
+        max-width: 40%;
+    }
+
+    .directions-green-line {
+        background-image: url('/images/top/top-menu-green-line-bottom.png');//url(/images/top/top-menu-green-line-reverse.png);
+        height: 162px;
+        width: 100%;
+        margin-top: -108px;
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .directions__wrap {
+
+        position: relative;
+        // padding: 100px 0;
+        &::after,
+        &::before {
+            content: '';
+            width: 215px;
+            height: 215px;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            background-image: url('/images/sprite.png');
+            background-position: 0 -133px;
+        }
+
+        &::before {
+            left: -200px;
+        }
+
+        &::after {
+            background-position: -252px -165px;
+            right: -200px;
+        }
+    }
+}
+
+@media @desktop-widths {
+
+    .directions__item {
+        max-width: 25%;
+    }
+}
