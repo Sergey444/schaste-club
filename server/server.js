@@ -8,10 +8,23 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import App from '../src/components/app';
 
+import {StaticRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducer from '../src/reducers/';
+import {AppServiceProvider} from '../src/components/app-service-context';
+import AppService from '../src/servises/app-service';
+
+const appService = new AppService();
+
 const app = express();
 const PORT = 9000;
 
-app.use(`^/$`, (request, responce) => {
+app.use(`^/*`, (request, responce) => {
+
+    const context = {};
+    const store = createStore(reducer);
+
     fs.readFile(path.resolve(`./build/index.html`), `utf-8`, (err, data) => {
         if (err) {
             console.log(err);
@@ -19,8 +32,16 @@ app.use(`^/$`, (request, responce) => {
         }
         return responce.send(
             data.replace(
-                `<div id="schaste-app">`,
-                `<div id="schaste-app">${ReactDOMServer.renderToString(<App />)}</div>`
+                `<div id="schaste-app"></div>`,
+                `<div id="schaste-app">${ReactDOMServer.renderToString(
+                    <Provider store={store}>
+                        <AppServiceProvider value={appService}>
+                            <StaticRouter location={request.url} context={context}>
+                                <App />
+                            </StaticRouter>
+                        </AppServiceProvider>
+                    </Provider>
+                )}</div>`
             )
         );
     });

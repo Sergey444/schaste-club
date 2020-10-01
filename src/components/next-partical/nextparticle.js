@@ -1,11 +1,12 @@
 /* eslint-disable */
-const _requestAnimationFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    function (callback) {
-        setTimeout(callback, 10);
-    };
+const _requestAnimationFrame = typeof window !== `undefined` &&
+  ( window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ) ||
+  function (callback) {
+      setTimeout(callback, 10);
+  };
+
 let imageData;
 let renderCount;
 let index;

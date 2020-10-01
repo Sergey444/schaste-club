@@ -9,10 +9,12 @@ module.exports = (env, argv) => {
         entry: `./src/index.js`,
         output: {
             filename: `main.js`,
-            path: path.join(__dirname, `build`) // eslint-disable-line
+            path: path.join(__dirname, `build`), // eslint-disable-line
+            // publicPath: `/`
         },
         devServer: {
             contentBase: path.join(__dirname, `public`), // eslint-disable-line
+            historyApiFallback: true,
             compress: false,
             open: true,
             port: 1337,

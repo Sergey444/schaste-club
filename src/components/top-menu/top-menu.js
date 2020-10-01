@@ -2,16 +2,18 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
-// import NextParticle from '../next-partical';
+import NextParticle from '../next-partical';
 
 const TopMenu = () => {
-    const isMainClass = window.location.pathname === `/` ? `top-menu top-menu--main` : `top-menu`;
+
+    const isMainClass = typeof window !== `undefined` && window.location.pathname === `/` ? `top-menu top-menu--main` : `top-menu`;
+
     return (
         <section className={isMainClass}>
             <div className="top-menu__wrapper container">
                 <div className="top-menu__logo">
                     <NavLink to="/">
-                        {/* <NextParticle /> */}
+                        <NextParticle />
                     </NavLink>
                 </div>
 
