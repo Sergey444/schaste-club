@@ -11,7 +11,7 @@ import App from '../src/components/app';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import reducer from '../src/reducers/';
+import reducer from '../src/reducers';
 import {AppServiceProvider} from '../src/components/app-service-context';
 import AppService from '../src/servises/app-service';
 
@@ -20,7 +20,7 @@ const appService = new AppService();
 const app = express();
 const PORT = 9000;
 
-app.use(`^/*`, (request, responce) => {
+app.use(`*`, (request, responce) => {
 
     const context = {};
     const store = createStore(reducer);
@@ -30,6 +30,8 @@ app.use(`^/*`, (request, responce) => {
             console.log(err);
             return responce.status(500).send(`Some error happened!!!`);
         }
+
+        responce.setHeader(`Cache-Control`, `css, max-age=604800`);
         return responce.send(
             data.replace(
                 `<div id="schaste-app"></div>`,
@@ -47,7 +49,9 @@ app.use(`^/*`, (request, responce) => {
     });
 });
 
-app.use(express.static(path.resolve(__dirname, `...`, `build`)));
+// app.use(express.static(`./build`));
+app.use(express.static(__dirname + `/build`));
+app.disable(`x-powered-by`);
 
 app.listen(PORT, () => {
     console.log(`App launched on ${PORT}`);

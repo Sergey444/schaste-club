@@ -1,5 +1,5 @@
 import React from 'react';
-// import Map from '../map';
+import Map from '../map';
 import Postcard from '../postcard';
 import {connect} from 'react-redux';
 import AppService from '../../servises/app-service';
@@ -53,7 +53,7 @@ const ContactsPage = (props) => {
             <h1 className="title__hidden">Сайт детского центра</h1>
             <div className="contacts__wrapper container">
 
-                {/* <Map /> */}
+                <Map />
 
                 <div className="contacts__block">
                     <div className="contacts__info">

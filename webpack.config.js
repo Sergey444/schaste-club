@@ -2,6 +2,8 @@
 
 const path = require(`path`);
 const CopyPlugin = require(`copy-webpack-plugin`);
+
+const WebpackAssetsManifest = require(`webpack-assets-manifest`);
 // const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 
 module.exports = (env, argv) => {
@@ -57,6 +59,10 @@ module.exports = (env, argv) => {
             // new MiniCssExtractPlugin({
             //     filename: `./css/style.css`
             // }),
+
+            new WebpackAssetsManifest({
+                output: `asset-manifest.json`
+            }),
 
             new CopyPlugin({
                 patterns: [
