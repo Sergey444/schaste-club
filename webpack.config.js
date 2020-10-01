@@ -26,41 +26,30 @@ module.exports = (env, argv) => {
                         loader: `babel-loader`,
                     },
                 },
+
                 {
                     test: /\.less$/,
-                    use: [`css-loader`, `less-loader`], // compiles Less to CSS
-                }
-                // {
-                //     test: /\.less$/,
-                //     use: [
-                //         // {
-                //         //     loader: MiniCssExtractPlugin.loader,
-                //         //     options: {
-                //         //         hmr: argv.mode === `development`,
-                //         //         reloadAll: true,
-                //         //     }
-                //         // },
-                //         {
+                    use: [
+                        {
+                            loader: `style-loader`,
+                        },
+                        {
+                            loader: `css-loader?url=false`,
+                        },
+                        {
+                            loader: `less-loader`,
+                            options: {
+                                lessOptions: {
+                                    strictMath: true,
+                                },
+                            },
+                        },
+                    ],
+                },
 
-                //             loader: `css-loader`
-                //         },
-                //         {
-                //             loader: `postcss-loader`,
-                //             options: {
-                //                 sourceMap: true,
-                //                 config: {
-                //                     path: `./postcss.config.js`
-                //                 }
-                //             }
-                //         },
-                //         {
-                //             loader: `less-loader`
-                //         }
-                //     ],
-                // }
             ],
         },
-        devtool: `source-map`,
+        devtool: argv.mode === `development` ? `source-map` : false,
         plugins: [
 
             // new MiniCssExtractPlugin({
