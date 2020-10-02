@@ -20,7 +20,10 @@ const appService = new AppService();
 const app = express();
 const PORT = 9000;
 
-app.use(`*`, (request, responce) => {
+
+app.use(express.static(`build`));
+
+app.use(`/`, (request, responce) => {
 
     const context = {};
     const store = createStore(reducer);
@@ -50,7 +53,6 @@ app.use(`*`, (request, responce) => {
 });
 
 // app.use(express.static(`./build`));
-app.use(express.static(__dirname + `/build`));
 app.disable(`x-powered-by`);
 
 app.listen(PORT, () => {
