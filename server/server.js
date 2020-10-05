@@ -34,7 +34,7 @@ app.use(`/`, (request, responce) => {
             return responce.status(500).send(`Some error happened!!!`);
         }
 
-        responce.setHeader(`Cache-Control`, `css, max-age=604800`);
+        // responce.setHeader(`Cache-Control`, `css, max-age=604800`);
         return responce.send(
             data.replace(
                 `<div id="schaste-app"></div>`,
@@ -52,7 +52,6 @@ app.use(`/`, (request, responce) => {
     });
 });
 
-// app.use(express.static(`./build`));
 app.disable(`x-powered-by`);
 
 app.listen(PORT, () => {
