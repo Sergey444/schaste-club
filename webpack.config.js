@@ -4,13 +4,13 @@ const path = require(`path`);
 const CopyPlugin = require(`copy-webpack-plugin`);
 
 const WebpackAssetsManifest = require(`webpack-assets-manifest`);
-// const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
+const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 
 module.exports = (env, argv) => {
     return {
         entry: `./src/index.js`,
         output: {
-            filename: `main.js`,
+            filename: `./static/js/main.js`,
             path: path.join(__dirname, `build`), // eslint-disable-line
             // publicPath: `/`
         },
@@ -35,16 +35,29 @@ module.exports = (env, argv) => {
                     test: /\.less$/,
                     use: [
                         {
-                            loader: `style-loader`,
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                hmr: argv.mode === 'development',
+                                reloadAll: true,
+                            }
                         },
                         {
                             loader: `css-loader?url=false`,
                         },
                         {
+                            loader: 'postcss-loader',
+                            options: {
+                                postcssOptions: {
+                                    sourceMap: true, 
+                                    config: path.resolve(__dirname, 'postcss.config.js'),
+                                }
+                            }
+                        },
+                        {
                             loader: `less-loader`,
                             options: {
                                 lessOptions: {
-                                    strictMath: true,
+                                    // strictMath: true,
                                 },
                             },
                         },
@@ -56,9 +69,9 @@ module.exports = (env, argv) => {
         devtool: argv.mode === `development` ? `source-map` : false,
         plugins: [
 
-            // new MiniCssExtractPlugin({
-            //     filename: `./css/style.css`
-            // }),
+            new MiniCssExtractPlugin({
+                filename: `./static/css/style.css`
+            }),
 
             new WebpackAssetsManifest({
                 output: `asset-manifest.json`

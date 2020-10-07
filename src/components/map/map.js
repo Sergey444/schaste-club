@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
-import DG from '2gis-maps';
+// import DG from '2gis-maps';
+
+const DG = typeof window !== `undefined` && require(`2gis-maps`);
 
 const popupContent =
     `<div class="contacts__map-popup">

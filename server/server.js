@@ -20,8 +20,9 @@ const appService = new AppService();
 const app = express();
 const PORT = 9000;
 
-
-app.use(express.static(`build`));
+app.use(`/static`, express.static(`build/static`));
+app.use(`/images`, express.static(`build/images`));
+app.use(`/fonts`, express.static(`build/fonts`));
 
 app.use(`/`, (request, responce) => {
 
@@ -52,7 +53,7 @@ app.use(`/`, (request, responce) => {
     });
 });
 
-app.disable(`x-powered-by`);
+// app.disable(`x-powered-by`);
 
 app.listen(PORT, () => {
     console.log(`App launched on ${PORT}`);

@@ -3,10 +3,11 @@ import {NavLink} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
 import NextParticle from '../next-partical';
+import PropTypes from 'prop-types';
 
-const TopMenu = () => {
+const TopMenu = (props) => {
 
-    const isMainClass = typeof window !== `undefined` && window.location.pathname === `/` ? `top-menu top-menu--main` : `top-menu`;
+    const isMainClass = props.location.pathname === `/` ? `top-menu top-menu--main` : `top-menu`;
 
     return (
         <section className={isMainClass}>
@@ -37,6 +38,10 @@ const TopMenu = () => {
             </div>
         </section>
     );
+};
+
+TopMenu.propTypes = {
+    location: PropTypes.object
 };
 
 export default withRouter(TopMenu);
