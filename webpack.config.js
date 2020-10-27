@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
                         {
                             loader: MiniCssExtractPlugin.loader,
                             options: {
-                                hmr: argv.mode === 'development',
+                                hmr: argv.mode === `development`,
                                 reloadAll: true,
                             }
                         },
@@ -45,11 +45,12 @@ module.exports = (env, argv) => {
                             loader: `css-loader?url=false`,
                         },
                         {
-                            loader: 'postcss-loader',
+                            loader: `postcss-loader`,
                             options: {
                                 postcssOptions: {
-                                    sourceMap: true, 
-                                    config: path.resolve(__dirname, 'postcss.config.js'),
+                                    sourceMap: true,
+                                    // eslint-disable-next-line no-undef
+                                    config: path.resolve(__dirname, `postcss.config.js`),
                                 }
                             }
                         },

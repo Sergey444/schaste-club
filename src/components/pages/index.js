@@ -8,6 +8,7 @@ import AboutPage from './about-page';
 import PricePage from './price-page';
 import NewsPage from './news-page';
 import MainPage from './main-page';
+import NotFound from './not-found';
 
 export {
     TeachersPage,
@@ -19,5 +20,6 @@ export {
     OfferPage,
     AboutPage,
     NewsPage,
-    MainPage
+    MainPage,
+    NotFound
 };

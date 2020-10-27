@@ -15,6 +15,8 @@ import reducer from '../src/reducers';
 import {AppServiceProvider} from '../src/components/app-service-context';
 import AppService from '../src/servises/app-service';
 
+import routes from '../src/servises/routes';
+
 const appService = new AppService();
 
 const app = express();
@@ -28,6 +30,11 @@ app.use(`/`, (request, responce) => {
 
     const context = {};
     const store = createStore(reducer);
+
+    const is404 = routes.findIndex((item) => item.path === request.url || `${item.path}/` === request.url);
+    if (is404 === -1) {
+        responce.status(404);
+    }
 
     fs.readFile(path.resolve(`./build/index.html`), `utf-8`, (err, data) => {
         if (err) {
