@@ -22,7 +22,7 @@ const TopMenu = (props) => {
                     <li className="top-menu__item"><NavLink to="/about" activeClassName="active">Про клуб</NavLink></li>
                     <li className="top-menu__item"><NavLink to="/news" activeClassName="active">Новости</NavLink></li>
                     <li className="top-menu__item"><NavLink to="/price" activeClassName="active">Прайс-лист</NavLink></li>
-                    <li className="top-menu__item"><NavLink to="/gallery" activeClassName="active">Фотогалерея</NavLink></li>
+                    {/* <li className="top-menu__item"><NavLink to="/gallery" activeClassName="active">Фотогалерея</NavLink></li> */}
                     <li className="top-menu__item"><NavLink to="/contacts" activeClassName="active">Контакты</NavLink></li>
                 </ul>
 

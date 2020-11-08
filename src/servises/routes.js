@@ -1,4 +1,4 @@
-import {ContactsPage, MainPage, PricePage, GalleryPage, AboutPage, NewsPage, PolicyPage, OfferPage} from '../components/pages';
+import {ContactsPage, MainPage, PricePage, AboutPage, NewsPage, PolicyPage, OfferPage} from '../components/pages';
 
 export default [
     {
@@ -16,11 +16,11 @@ export default [
         component: ContactsPage,
         exact: true
     },
-    {
-        path: `/gallery`,
-        component: GalleryPage,
-        exact: true
-    },
+    // {
+    //     path: `/gallery`,
+    //     component: GalleryPage,
+    //     exact: true
+    // },
     {
         path: `/about`,
         component: AboutPage,

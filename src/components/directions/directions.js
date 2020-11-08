@@ -81,7 +81,6 @@ const Directions = () => {
                             <h2 className="directions__title">Творческая студия &quot;Счастье в ладошках&quot;</h2>
                             <div className="direction__price">
                                 <div className="directions__single">Разовое посещение <span>400р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>2800р</span></div>
                             </div>
                         </div>
                         <div className="directions__more">
@@ -106,38 +105,6 @@ const Directions = () => {
                         </div>
                         <p className="directions__description">
                             Развиваем с ребятишками 4-6 лет внимание, воображение, память, логику, эмоциональный интеллект, волю, моторику, восприятие, речь, межполушарное взаимодействие, выполняя интересные и необычные задания! А ещё обогащаем общие представления о мире вокруг нас, знакомимся с буквами и цифрами
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Консультация психолога</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>1000р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>3600р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Психолог профессионально, научно и доступно расскажет о том, какие механизмы управляют нашим поведением, нашими эмоциональными реакциями в той или иной ситуации, поможет разобраться и найти оптимальный именно для вас способ действий тогда, когда решения неочевидны или не помогает ничего из того, что вы уже попробовали самостоятельно
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Клуб развития эмоционального интеллекта &quot;Я есть!&quot;</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>400р</span></div>
-                                <div className="directions__multiple">Абонемент 4 занятий/месяц <span>2800р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Просто подойти и познакомиться, просто предложить помощь, просто попросить о чём-то или поделиться своими переживаниями...Иногда для детей это совсем не просто, и все сомнения, негативные эмоции, тревоги приходится держать в себе. Часто потом это выплёскивается истериками, капризами, страхами и нежеланием что-либо делать. В клубе дети учатся экологично и доступно выражать свои мысли, чувства, учатся общаться, осознавать свои потребности и потребности других людей
                         </p>
                     </div>
 
@@ -178,8 +145,8 @@ const Directions = () => {
                         <div className="directions__info">
                             <h2 className="directions__title">Клуб будущего первоклассника</h2>
                             <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>400р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>2800р</span></div>
+                                <div className="directions__single">Разовое посещение <span>500р</span></div>
+                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>3200р</span></div>
                             </div>
                         </div>
                         <div className="directions__more">
@@ -188,22 +155,6 @@ const Directions = () => {
                         <p className="directions__description">
                             Школа будет долгое время занимать важное место в жизни ребёнка! На занятиях в клубе ваш будущий первоклассник в спокойном темпе и благоприятной атмосфере усвоит правила школьной жизни, поймёт, зачем и как нужно учиться, узнает то, что поможет уверенно шагнуть в новый этап его жизни
                         </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Встречи для мам</h2>
-                            {/* <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>450₽</span></div>
-                                <div className="directions__multiple">Абонемент 4 занятий/месяц <span>1600₽</span></div>
-                            </div> */}
-                        </div>
-                        {/* <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <div className="directions__description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquam facere aliquid atque accusamus nostrum mollitia beatae quasi vel dolorem, autem nisi! Eius facere magni culpa commodi voluptatem, ducimus dolorum.
-                        </div> */}
                     </div>
 
                 </div>
