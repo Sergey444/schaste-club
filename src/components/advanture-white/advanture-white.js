@@ -13,31 +13,31 @@ const AdvantureWhite = () => {
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/home.png" alt="Детский сад" />
                                 </span>
-                                <span>Уютная, домашняя атмосфера, в которой ребёнку точно будет комфортно</span>
+                                <span>Уютная атмосфера, в которой ребёнку точно будет комфортно</span>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/chat.png" alt="Мини сад" />
                                 </span>
-                                <span>Маленькие группы до 10 человек</span>
+                                <span>Маленькие группы до 12 человек или индивидуальные занятия на ваш выбор</span>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/puzzle1.png" alt="Творческое развитие" />
                                 </span>
-                                <span>Комплексное развитие интеллектуальных и творческих способностей</span>
+                                <span>Родители, которые водят своих деток в клуб "Счастье" отмечают первые положительные результаты уже через несколько занятий</span>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/hands.png" alt="Занятия для маленьких" />
                                 </span>
-                                <span>Занятия для деток с 9 месяцев до 12 лет</span>
+                                <span>Занятия и мероприятия для деток с 1 года до 7 лет</span>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/mortarboar.png" alt="Преподаватели" />
                                 </span>
-                                <span>Талантливые педагоги, которые знают своё дело, любят и понимают детей</span>
+                                <span>Талантливые специалисты, которые знают своё дело, любят и понимают детей, регулярно проходят обучение</span>
                             </li>
                         </ul>
 
