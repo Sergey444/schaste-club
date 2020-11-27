@@ -18,7 +18,7 @@ const Advanture = () => {
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/blueprint.png" alt="Ментальная арифметика" />
                                 </span>
-                                <span>Научится считать, писать, читать, решать нестандартные задачки</span>
+                                <span>Познакомится с буквами и звуками, цифрами и логикой счёта, будет развивать мелкую моторику и мышление, восприятие, память, внимание и речь</span>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
