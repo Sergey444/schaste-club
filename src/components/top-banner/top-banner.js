@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import Modal from 'react-modal';
-import {setDiscountFormIsSubmited} from '../../actions';
 import {connect} from 'react-redux';
 import AppService from '../../servises/app-service';
 import Salecard from '../salecard';
@@ -42,6 +41,8 @@ const TopBanner = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+
+        const {setDiscountFormIsSubmited} = props;
 
         const data = {
             title: `Форма с главной страницы, «Получить скидку»`,
@@ -111,7 +112,8 @@ TopBanner.propTypes = {
     userName: PropTypes.string,
     userPhone: PropTypes.string,
     userDirection: PropTypes.string,
-    discountFormIsSubmited: PropTypes.bool
+    discountFormIsSubmited: PropTypes.bool,
+    setDiscountFormIsSubmited: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
@@ -123,8 +125,16 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = {
-    setDiscountFormIsSubmited
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        setDiscountFormIsSubmited: () => {
+            dispatch({
+                type: `DISCOUNT_FORM_IS_SUBMITED`,
+                payload: true
+            });
+        }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopBanner);
