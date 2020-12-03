@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 
-import NextParticle from '../next-partical';
+// import NextParticle from '../next-partical';
 import PropTypes from 'prop-types';
 
 const TopMenu = (props) => {
@@ -14,7 +14,8 @@ const TopMenu = (props) => {
             <div className="top-menu__wrapper container">
                 <div className="top-menu__logo">
                     <NavLink to="/">
-                        <NextParticle />
+                        {/* <NextParticle /> */}
+                        <img src="/images/logo/6.png" alt="Детский центр Счастье" />
                     </NavLink>
                 </div>
 
