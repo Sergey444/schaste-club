@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 const Salecard = (props) => {
 
-    const {userName, userPhone, userDirection} = props;
+    const {userName, userPhone} = props;
 
     const handleChange = (evt) => {
         const name = evt.target.name;
@@ -30,7 +30,8 @@ const Salecard = (props) => {
     return (
         <Fragment>
             <div className="form-row">
-                <input type="text" id="name" name="userName" onChange={handleChange} value={userName} required />
+                {/*  eslint-disable-next-line react/no-unknown-property */}
+                <input type="text" id="name" name="userName" onChange={handleChange} value={userName} autocomplete="off" required />
                 <label>Ваше имя</label>
             </div>
             <div className="form-row">
@@ -43,7 +44,7 @@ const Salecard = (props) => {
                     required/>
                 <label>Ваш телефон</label>
             </div>
-            <div className="form-row">
+            {/* <div className="form-row">
                 <select required className="postcard__select" name="userDirection" onChange={handleChange} value={userDirection}>
                     <option value="">Выберите направление</option>
                     <option value="Птенчики">Птенчики</option>
@@ -52,8 +53,7 @@ const Salecard = (props) => {
                     <option value="Я есть">Я есть</option>
                     <option value="Арт-студия «Счастье в ладошках»">Арт-студия «Счастье в ладошках»</option>
                 </select>
-                {/* <label>Выберите направление, для которого хотите получить скидку</label> */}
-            </div>
+            </div> */}
             <div className="form-agree">
                 <input type="checkbox" name="agree" id="agree" value="on" required/>
                 <label htmlFor="agree" className="postcard__checkbox"><a href="/#">Cогласен</a> на обработку и передачу персональных данных в соответствии с <NavLink to="/policy">пользовательским соглашением</NavLink></label>
