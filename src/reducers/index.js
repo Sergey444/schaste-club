@@ -6,6 +6,7 @@ const initialState = {
     userDirection: ``,
     contactsFormIsSubmited: false,
     discountFormIsSubmited: false,
+    directionFormIsSubmited: [],
     reviews: {},
 };
 
@@ -46,6 +47,11 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             discountFormIsSubmited: action.payload
+        };
+    case `DIRECTION_FORM_IS_SUBMITED`:
+        return {
+            ...state,
+            directionFormIsSubmited: action.payload
         };
     case `REVIEWS_LOADED`:
         return {

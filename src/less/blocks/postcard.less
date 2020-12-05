@@ -2,9 +2,8 @@
     font-size: 22px;
     padding: 20px;
     background: #fff;
-    border: 10px solid transparent;
-
-    border-image: 10 repeating-linear-gradient(135deg, @pink, @pink 10px, transparent 10px, transparent 20px, @orange 20px, @orange 30px,transparent 30px, transparent 40px);
+    border: 10px solid black;
+    border-image: 10 repeating-linear-gradient(135deg, @pink, @pink 10px, rgba(255,255,255,0) 10px, rgba(255,255,255,0) 20px, @orange 20px, @orange 30px,rgba(255,255,255,0) 30px, rgba(255,255,255,0) 40px);
     color: #605756;
 
     & .btn {
@@ -14,6 +13,9 @@
 .postcard__title {
     color: @pink;
     margin-top: 0;
+}
+.postcard__subtitle {
+    color: @pink;
 }
 .postcard__checkbox {
     opacity: 1;
@@ -158,6 +160,17 @@
         font-size: 18px;
     }
 }
+
+.postcard__content {
+    margin-bottom: 40px;
+}
+.postcard__control {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
 
 @media @tablet-widths {
     .form-agree {

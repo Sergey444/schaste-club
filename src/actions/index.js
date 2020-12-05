@@ -47,6 +47,13 @@ const setDiscountFormIsSubmited = () => {
     };
 };
 
+const setDirectionFormIsSubmited = (directions) => {
+    return {
+        type: `DIRECTION_FORM_IS_SUBMITED`,
+        payload: directions
+    };
+};
+
 const reviewsLoaded = (reviews) => {
     return {
         type: `REVIEWS_LOADED`,
@@ -62,5 +69,6 @@ export {
     setDirection,
     setContactsFormIsSubmited,
     setDiscountFormIsSubmited,
+    setDirectionFormIsSubmited,
     reviewsLoaded
 };

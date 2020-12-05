@@ -11,7 +11,7 @@ const NewsPage = () => {
             <div className="news__wrapper container">
                 <div className="news__list">
 
-                    <div className="news__item">
+                    {/* <div className="news__item">
                         <div className="news__head">
                             <div className="news__image">
                                 <img src="/images/news/original/quarantine.jpg" alt="" />
@@ -31,7 +31,7 @@ const NewsPage = () => {
                                 <p>Чтобы было ещё интересней будем разыгрывать призы В ИНСТАГРАМ среди участников наших занимашек-развивашек, которые будут делиться своими успехами в сториз и отмечать на них @schaste.tmn (сертификаты на пробные занятия, скидки на абонементы, развивающие игры и другие приятности) ТАК ЧТО ЕСЛИ ВЫ ЕЩЁ НЕ ПОДПИСАНЫ В ИНСТАГРАМ НА @schaste.tmn - самое время это сделать))</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="news__item">
                         <div className="news__head">
