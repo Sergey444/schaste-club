@@ -104,9 +104,9 @@ const Directions = (props) => {
 
                 <div className="directions__list">
 
-                    {directionsData.map((direction, index) => {
+                    {directionsData.map((direction) => {
                         return (
-                            <div className="directions__item" key={`direction-${index}`}>
+                            <div className="directions__item" key={`direction-${direction.id}`}>
                                 <div className="directions__info">
                                     <h2 className="directions__title">{direction.title}</h2>
                                     <div className="direction__price">
@@ -116,7 +116,7 @@ const Directions = (props) => {
                                     </div>
                                 </div>
                                 <div className="directions__more">
-                                    <span onClick={() => directionOpen(index)} className="directions__more-btn">Подробнее</span>
+                                    <span onClick={() => directionOpen(direction.id)} className="directions__more-btn">Подробнее</span>
                                 </div>
                                 <p className="directions__description">
                                     {direction.description}
