@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 
 import Modal from 'react-modal';
+import Salecard from '../salecard/salecard';
+import AppService from '../../servises/app-service';
+import directionsData from '../../servises/directions-data';
+
+import {connect} from 'react-redux';
+
+import PropTypes from 'prop-types';
 
 const customStyles = {
     content: {
@@ -14,11 +21,13 @@ const customStyles = {
     }
 };
 
-const Directions = () => {
+const Directions = (props) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [formIsOpen, setFormIsOpen] = useState([]);
     const [modalTitle, setModalTitle] = useState(``);
     const [modalContent, setModalContent] = useState(``);
+    const [currentDirection, setCurrentDirection] = useState(false);
 
     const openModal = () => {
         setModalIsOpen(true);
@@ -28,15 +37,51 @@ const Directions = () => {
         setModalIsOpen(false);
     };
 
-    const directionOpen = (evt) => {
-        const btn = evt.target;
-        const container = btn.parentElement.parentElement;
-        const title = container.querySelector(`.directions__title`).textContent;
-        const content = container.querySelector(`.directions__description`).textContent;
-        setModalTitle(title);
-        setModalContent(content);
+    const openForm = () => {
+        setFormIsOpen([...formIsOpen, currentDirection]);
+    };
+
+    const directionOpen = (id) => {
+        setModalTitle(directionsData[id].title);
+        setModalContent(directionsData[id].description);
+        setCurrentDirection(id);
         openModal();
     };
+
+
+    const appService = new AppService();
+
+    const {
+        userName,
+        userPhone,
+        setDirectionFormIsSubmited} = props;
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        const data = {
+            title: `Форма записи на занятие, ${modalTitle}`,
+            name: userName,
+            phone: userPhone,
+            message: ``
+        };
+
+        appService.sendMessage(data)
+            .then((resolve) => resolve ? setDirectionFormIsSubmited([...directionFormIsSubmited, currentDirection]) : onError())
+            .catch(onError);
+    };
+
+    const onError = () => {
+        // console.info('Error');
+    };
+
+    const {directionFormIsSubmited} = props;
+
+    const formContent = directionFormIsSubmited.find((item) => item === currentDirection) ? <div className="contacts__is-submited">Заявка отправлена</div>
+        : <form className="postcard__form" onSubmit={handleSubmit}>
+            <div className="postcard__subtitle">Заполните форму и мы с вами свяжемся</div>
+            <Salecard />
+        </form>;
 
     return (
         <section className="directions">
@@ -49,113 +94,36 @@ const Directions = () => {
                     ariaHideApp={false}>
                     <div className="postcard">
                         <h2 className="postcard__title">{modalTitle}</h2>
-                        {modalContent}
+                        <div className="postcard__content">{modalContent}</div>
 
+                        { directionFormIsSubmited.find((item) => item === currentDirection) || formIsOpen.find((item) => item === currentDirection) ?
+                            formContent
+                            : <div className="postcard__control"><span onClick={openForm} className="btn">Записаться</span></div> }
                     </div>
                 </Modal>
 
-                {/* <div className="title">Направления</div> */}
                 <div className="directions__list">
 
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Мини - сад</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>450р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>3600р</span></div>
-                                <div className="directions__multiple">Абонемент 12 занятий/месяц <span>4800р</span></div>
-                                <div className="directions__multiple">Абонемент 20 занятий/месяц <span>6500р</span>
+                    {directionsData.map((direction, index) => {
+                        return (
+                            <div className="directions__item" key={`direction-${index}`}>
+                                <div className="directions__info">
+                                    <h2 className="directions__title">{direction.title}</h2>
+                                    <div className="direction__price">
+                                        {direction.prices.map((item, i) => {
+                                            return <div key={`price-${i}`} className="directions__single">{item.type} <span>{item.price}р</span></div>;
+                                        })}
+                                    </div>
                                 </div>
+                                <div className="directions__more">
+                                    <span onClick={() => directionOpen(index)} className="directions__more-btn">Подробнее</span>
+                                </div>
+                                <p className="directions__description">
+                                    {direction.description}
+                                </p>
                             </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description" >
-                            Группа кратковременного пребывания (с 9:00 до 13:00) для малышей с 1,8 до 4 лет. Целых 4 часа увлекательных, развивающих занятий для деток в дружной компании таких же малышей и, вместе с тем, целых 4 часа свободного времени для мамочки! В мини-садике мы делаем зарядку, играем, танцуем, много внимания уделяем развитию сенсорики, мелкой моторики и речи, занимемся творчеством: лепим, клеим, рисуем и каждый день радуем мам необычными поделками, выполненными в разных техниках
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Творческая студия &quot;Счастье в ладошках&quot;</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>400р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Открываем с детками 3-6 лет двери в мир
-                         искусства! Получаем удовольствие от безграничных возможностей самовыражения в творчестве, развиваем фантазию, восприятие, пространственную ориентацию, мелкую моторику, чувство красоты и гармонии. Рисование и лепка полезны для деток ещё и тем, что прекрасно снимают эмоциональное напряжение, тревогу (ведь не каждый ребёнок в полной мере способен выразить свои чувства!)
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Интеллект-тренировки &quot;Умничка&quot;</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>400р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>2800р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Развиваем с ребятишками 3-4, 4-5 и 5-6 лет внимание, воображение, память, логику, эмоциональный интеллект, волю, моторику, восприятие, речь, межполушарное взаимодействие, выполняя интересные и необычные задания! А ещё обогащаем общие представления о мире вокруг нас, знакомимся с буквами и цифрами
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Комплексное развитие для самых маленьких &quot;Птенчики&quot;</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>400р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>2800р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Малыши с 1-2 лет при помощи своих мамочек и под руководством психолога развивают мелкую и крупную моторику, сенсорное восприятие, мышление, стимулируют речь, занимаются творчеством и просто весело проводят время в дружной компании таких же деток. Мамы смогут узнать всю правду о раннем развитии, задать вопросы специалисту, научиться выполнять полезные развивающие упражнения и практиковать их с малышом дома
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Логопед</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>500р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>3600р</span></div>
-                                <div className="directions__multiple">Абонемент 12 занятий/месяц <span>4800р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Наши специалисты по развитию речи работают с детками с 2-х лет: активируют речь у неговорящих малышей, помогают поставить правильные и красивые звуки, обогатить словарный запас, проводят занятия по профилактике речевых нарушений
-                        </p>
-                    </div>
-
-                    <div className="directions__item">
-                        <div className="directions__info">
-                            <h2 className="directions__title">Клуб будущего первоклассника</h2>
-                            <div className="direction__price">
-                                <div className="directions__single">Разовое посещение <span>500р</span></div>
-                                <div className="directions__multiple">Абонемент 8 занятий/месяц <span>3200р</span></div>
-                            </div>
-                        </div>
-                        <div className="directions__more">
-                            <span onClick={directionOpen} className="directions__more-btn">Подробнее</span>
-                        </div>
-                        <p className="directions__description">
-                            Школа будет долгое время занимать важное место в жизни ребёнка! На занятиях в клубе ваш будущий первоклассник в спокойном темпе и благоприятной атмосфере усвоит правила школьной жизни, поймёт, зачем и как нужно учиться, узнает то, что поможет уверенно шагнуть в новый этап его жизни
-                        </p>
-                    </div>
+                        );
+                    })}
 
                 </div>
             </div>
@@ -163,4 +131,32 @@ const Directions = () => {
     );
 };
 
-export default Directions;
+Directions.propTypes = {
+    userName: PropTypes.string,
+    userPhone: PropTypes.string,
+    userDirection: PropTypes.string,
+    directionFormIsSubmited: PropTypes.array,
+    setDirectionFormIsSubmited: PropTypes.func
+};
+
+const mapStateToProps = (state) => {
+    return {
+        userName: state.userName,
+        userPhone: state.userPhone,
+        directionFormIsSubmited: state.directionFormIsSubmited
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        setDirectionFormIsSubmited: (array) => {
+            dispatch({
+                type: `DIRECTION_FORM_IS_SUBMITED`,
+                payload: array
+            });
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Directions);

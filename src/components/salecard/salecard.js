@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useRef, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 
@@ -10,6 +10,14 @@ import PropTypes from 'prop-types';
 const Salecard = (props) => {
 
     const {userName, userPhone} = props;
+
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        if (!userName) {
+            inputRef.current.focus();
+        }
+    }, []);
 
     const handleChange = (evt) => {
         const name = evt.target.name;
@@ -30,8 +38,14 @@ const Salecard = (props) => {
     return (
         <Fragment>
             <div className="form-row">
-                {/*  eslint-disable-next-line react/no-unknown-property */}
-                <input type="text" id="name" name="userName" onChange={handleChange} value={userName} autocomplete="off" required />
+                <input
+                    id="name"
+                    type="text"
+                    name="userName"
+                    ref={inputRef}
+                    onChange={handleChange}
+                    value={userName}
+                    required />
                 <label>Ваше имя</label>
             </div>
             <div className="form-row">
@@ -56,7 +70,7 @@ const Salecard = (props) => {
             </div> */}
             <div className="form-agree">
                 <input type="checkbox" name="agree" id="agree" value="on" required/>
-                <label htmlFor="agree" className="postcard__checkbox"><a href="/#">Cогласен</a> на обработку и передачу персональных данных в соответствии с <NavLink to="/policy">пользовательским соглашением</NavLink></label>
+                <label htmlFor="agree" className="postcard__checkbox"><a href="/offer">Cогласен</a> на обработку и передачу персональных данных в соответствии с <NavLink to="/policy">пользовательским соглашением</NavLink></label>
             </div>
             <div className="form-row">
                 <input type="submit" className="btn" value="Отправить сообщение" />
