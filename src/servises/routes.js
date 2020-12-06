@@ -1,4 +1,5 @@
-import {ContactsPage, MainPage, PricePage, AboutPage, NewsPage, PolicyPage, OfferPage} from '../components/pages';
+
+import {ContactsPage, MainPage, PricePage, AboutPage, NewsPage, PolicyPage, OfferPage, DirectionPage} from '../components/pages';
 
 export default [
     {
@@ -34,6 +35,11 @@ export default [
     {
         path: `/news`,
         component: NewsPage,
+        exact: true
+    },
+    {
+        path: `/direction/:directionId`,
+        component: DirectionPage,
         exact: true
     },
     {
