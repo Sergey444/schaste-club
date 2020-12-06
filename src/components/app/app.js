@@ -8,6 +8,7 @@ import {NotFound} from '../pages';
 import TopMenu from '../top-menu';
 import MobileMenu from '../mobile-menu';
 import Footer from '../footer';
+import ScrollToTop from '../scroll-to-top';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <TopMenu />
 
             <main id="pagecontent">
+                <ScrollToTop/>
                 <Switch>
                     {routes.map((route, index) => (
                         <Route key={`route-${index}`} {...route} exact/>
