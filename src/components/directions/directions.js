@@ -8,6 +8,7 @@ import directionsData from '../../servises/directions-data';
 import {connect} from 'react-redux';
 
 import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom';
 
 const customStyles = {
     content: {
@@ -119,7 +120,8 @@ const Directions = (props) => {
                                     </div>
                                 </div>
                                 <div className="directions__more">
-                                    <span onClick={() => directionOpen(direction.id)} className="directions__more-btn">Подробнее</span>
+                                    <span onClick={() => directionOpen(direction.id)} className="directions__more-btn ">Подробнее</span>
+                                    <NavLink to={`/direction/${direction.id}`} className="directions__more-btn directions__more-btn--mobile">Подробнее</NavLink>
                                 </div>
                                 <p className="directions__description">
                                     {direction.description}

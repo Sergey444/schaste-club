@@ -1,3 +1,4 @@
+import DirectionPage from './direction-page';
 import ContactsPage from './contacts-page';
 import TeachersPage from './teachers-page';
 import FeedbackPage from './feedback-page';
@@ -12,6 +13,7 @@ import NotFound from './not-found';
 
 export {
     TeachersPage,
+    DirectionPage,
     ContactsPage,
     FeedbackPage,
     GalleryPage,
