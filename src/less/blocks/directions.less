@@ -48,10 +48,6 @@
     box-shadow: 13px 19px 13px 0px rgba(52, 107, 0, 0.3);
     transition: 0.2s ease-in-out;
 
-    &:hover {
-        transform: translateY(-15px);
-        // box-shadow: 12px 20px 20px 0px rgba(52, 107, 0, 0.3);
-    }
 }
 .directions__title {
     font-size: 30px;
@@ -75,6 +71,10 @@
 @media @tablet-widths {
     .directions__item {
         max-width: 40%;
+        &:hover {
+            transform: translateY(-15px);
+            // box-shadow: 12px 20px 20px 0px rgba(52, 107, 0, 0.3);
+        }
     }
 
     .directions-green-line {
