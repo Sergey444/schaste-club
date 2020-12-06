@@ -42,9 +42,12 @@ const Directions = (props) => {
     };
 
     const directionOpen = (id) => {
-        setModalTitle(directionsData[id].title);
-        setModalContent(directionsData[id].description);
-        setCurrentDirection(id);
+
+        const direction = directionsData.find((item) => item.id === id);
+
+        setModalTitle(direction.title);
+        setModalContent(direction.description);
+        setCurrentDirection(direction.id);
         openModal();
     };
 
