@@ -24,7 +24,7 @@ const DirectionPage = (props) => {
             <h1 className="title__hidden">{direction.title}</h1>
             <div className="about__wrapper container">
                 <div className="title">{direction.title}</div>
-                <p>{direction.description}</p>
+                <p className="about__text">{direction.description}</p>
             </div>
         </section>
     );

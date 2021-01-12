@@ -4,6 +4,7 @@ import TopBanner from '../top-banner';
 import Directions from '../directions';
 import AdvantureWhite from '../advanture-white';
 import Advanture from '../advanture';
+import Advantages from '../advantages';
 import Reviews from '../reviews';
 
 // import Envelope from '../envelope';
@@ -25,6 +26,7 @@ const MainPage = () => {
             <Directions />
 
             <AdvantureWhite />
+            <Advantages />
             <Advanture />
             <Reviews />
 
