@@ -1,0 +1,33 @@
+.advantages {
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+
+        text-align: center;
+        flex-basis: 0;
+        flex-grow: 1;
+        
+        &-icon {
+            width: 100px;
+        }
+        
+        &-text {
+            color: @pink;
+        }
+        
+        min-width: 100%;
+        
+        @media @tablet-widths {
+            min-width: 45%;
+            padding: 20px;
+        }
+
+        @media @desktop-widths {
+            min-width: 20%;
+        }
+    }
+}

@@ -1,14 +1,9 @@
 .postcard {
-    font-size: 22px;
     padding: 20px;
     background: #fff;
     border: 10px solid black;
     border-image: 10 repeating-linear-gradient(135deg, @pink, @pink 10px, rgba(255,255,255,0) 10px, rgba(255,255,255,0) 20px, @orange 20px, @orange 30px,rgba(255,255,255,0) 30px, rgba(255,255,255,0) 40px);
     color: #605756;
-
-    & .btn {
-        font-size: 17px;
-    }
 }
 .postcard__title {
     color: @pink;
@@ -73,7 +68,7 @@
 .form-row input[type="text"], 
 .form-row input[type="email"], 
 .form-row textarea {
-	font-size: 20px;
+	font-size: 18px;
 	color: @pink;
     font-style: italic;
     position: relative;
@@ -100,7 +95,6 @@
     transition: all .3s;
 }
 .form-agree {
-    font-size: 15px;
     color: #605756;
     position: relative;
 
@@ -163,23 +157,10 @@
 
 .postcard__content {
     margin-bottom: 40px;
+    text-indent: 1.5em;
 }
 .postcard__control {
     display: flex;
     justify-content: flex-end;
 }
 
-
-
-
-@media @tablet-widths {
-    .form-agree {
-        font-size: 20px;
-    }
-    .postcard {
-        
-        & .btn {
-            font-size: 20px;
-        }
-    }
-}

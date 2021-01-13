@@ -1,15 +1,8 @@
 .advanture {
-    padding: 0px;
     background-color: @light-pink;
 }
-
-.advanture__wrap {
-    padding: 20px;
-}
-
 .advanture__subtitle {
     color: #ff4900;
-    font-size: 33px;
     text-shadow: 1px 1px 10px lightgrey;
 }
 .advanture__content {
@@ -23,35 +16,22 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .advanture__text {
-    font-size: 30px;
     color: #3a3a3a;
     margin: 0 auto;
 }
-
 .advanture--second .advanture__text {
     color: @pink;
 }
-
 .advanture__item {
     perspective: 500px;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    font-size: 20px;
-    font-weight: 300;
     background-color: @light-green;
-    box-shadow: 12px 14px 8px 0px rgba(52, 107, 0, 0.5);
-
-    &:not(:last-child) {
-        margin-bottom: 30px
-    }
-
-    & span {
-        line-height: 34px;
-    }
+    box-shadow: 13px 19px 13px 0 rgba(52, 107, 0, 0.3);
+    margin-bottom: 16px;
 }
 
 .advanture--second .advanture__item {
@@ -74,20 +54,14 @@
 }
 
 @media @tablet-widths {
-    .advanture__wrap {
-        padding-bottom: 70px ;
-    }
-
     .advanture__item {
         flex-wrap: nowrap;
-        font-size: 30px;
         padding: 0;
         padding-right: 30px;
     }
 
     .advanture__icon {
         margin: 0;
-        // margin-right: 30px;
     }
 
     .advanture--second .advanture__item:last-child {

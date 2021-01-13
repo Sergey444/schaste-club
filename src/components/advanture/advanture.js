@@ -12,31 +12,31 @@ const Advanture = () => {
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/reading.png" alt="Развивающие занятия" />
                                 </span>
-                                <span>Cтанет более внимательным и усидчивым, дисциплинированным и сознательным</span>
+                                <p>Cтанет более внимательным и усидчивым, дисциплинированным и сознательным</p>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/blueprint.png" alt="Ментальная арифметика" />
                                 </span>
-                                <span>Познакомится с буквами и звуками, цифрами и логикой счёта, будет развивать мелкую моторику и мышление, восприятие, память, внимание и речь</span>
+                                <p>Познакомится с буквами и звуками, цифрами и логикой счёта, будет развивать мелкую моторику и мышление, восприятие, память, внимание и речь</p>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/chat1.png" alt="Логопед" />
                                 </span>
-                                <span>Научится правильно и красиво говорить</span>
+                                <p>Научится правильно и красиво говорить</p>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/palette.png" alt="Рисование для детей" />
                                 </span>
-                                <span>Сможет развить свои таланты и найти путь для самовыражения</span>
+                                <p>Сможет развить свои таланты и найти путь для самовыражения</p>
                             </li>
                             <li className="advanture__item">
                                 <span className="advanture__img">
                                     <img className="advanture__icon" src="images/icons/128/plant.png" alt="Эмоциональный интелект" />
                                 </span>
-                                <span>Научится экологично выражать свои эмоции и чувства, а также правильно реагировать на эмоции и чувства окружающих</span>
+                                <p>Научится экологично выражать свои эмоции и чувства, а также правильно реагировать на эмоции и чувства окружающих</p>
                             </li>
                         </ul>
                     </div>

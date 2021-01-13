@@ -57,14 +57,14 @@ const ContactsPage = (props) => {
 
                 <div className="contacts__block">
                     <div className="contacts__info">
-                        <div className="contacts__item"><b>Адрес:</b> Тюмень, ул. Вербовая 4 </div>
-                        <div className="contacts__item"><b>Руководитель клуба:</b> <a href="tel:89220700090">8 (922) 07-000-90</a></div>
-                        <div className="contacts__item"><b>Администратор:</b> <a href="tel:89634575432">8 (963) 457-54-32</a></div>
-                        <div className="contacts__item"><b>Email:</b> <a href="mailto:info@schaste-club.ru">info@schaste-club.ru</a></div>
-                        <div className="contacts__item"><b>Режим работы:</b> с 9:00 до 20:00</div>
+                        <p className="contacts__item"><b>Адрес:</b> Тюмень, ул. Вербовая 4 </p>
+                        <p className="contacts__item"><b>Руководитель клуба:</b> <a href="tel:89220700090">8 (922) 07-000-90</a></p>
+                        <p className="contacts__item"><b>Администратор:</b> <a href="tel:89634575432">8 (963) 457-54-32</a></p>
+                        <p className="contacts__item"><b>Email:</b> <a href="mailto:info@schaste-club.ru">info@schaste-club.ru</a></p>
+                        <p className="contacts__item"><b>Режим работы:</b> с 9:00 до 20:00</p>
                     </div>
                     <div className="contacts__call">
-                        <div className="contacts__title">Уточните интересующие вас вопросы:</div>
+                        <p className="contacts__title">Уточните интересующие вас вопросы:</p>
                         <form className="postcard" onSubmit={handleSubmit}>
                             {content}
                         </form>
