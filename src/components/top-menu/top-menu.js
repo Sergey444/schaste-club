@@ -14,7 +14,7 @@ const TopMenu = (props) => {
                 <div className="top-menu__logo">
                     <NavLink to="/">
                         {/* <NextParticle /> */}
-                        <img src="/images/logo/6.png" alt="Детский центр Счастье" />
+                        <img src="/images/logo/logo.png" alt="Детский центр Счастье" />
                     </NavLink>
                 </div>
 
