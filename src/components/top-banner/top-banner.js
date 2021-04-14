@@ -78,7 +78,7 @@ const TopBanner = (props) => {
             </Modal>
 
             <div className="top-banner__wrapper container">
-                <h1 className="top-banner__title">Детский клуб &quot;Счастье&quot;</h1>
+                {/* <h1 className="top-banner__title">Детский клуб &quot;Счастье&quot;</h1> */}
 
                 <div className="top-banner__info">
                     <div className="top-banner__subtitle">Записывайтесь к нам на занятия</div>
